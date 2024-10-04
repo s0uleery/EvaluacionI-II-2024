@@ -5,9 +5,9 @@ INSERT INTO evento (nombre, fecha, lugar) VALUES ('Festival de Jazz', '2024-11-0
 
 -- Insertar algunos asistentes (si también deseas guardarlos en la BD)
 -- Suponiendo que tienes una tabla Asistente (nombre, email)
-INSERT INTO asistente (nombre, email) VALUES ('Juan Pérez', 'juan@example.com');
-INSERT INTO asistente (nombre, email) VALUES ('María López', 'maria@example.com');
-INSERT INTO asistente (nombre, email) VALUES ('Carlos Sánchez', 'carlos@example.com');
+INSERT INTO asistente (nombre, email) VALUES ('Juan Pérez', 'juan.perez@ucn.cl');
+INSERT INTO asistente (nombre, email) VALUES ('María López', 'maria.lopez@ucn.cl');
+INSERT INTO asistente (nombre, email) VALUES ('Carlos Sánchez', 'carlos.sanchez@ucn.cl');
 
 -- Insertar la relación entre asistentes y eventos
 -- Si tienes una tabla intermedia Evento_Asistente (id_evento, id_asistente)

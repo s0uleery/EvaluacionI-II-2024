@@ -18,10 +18,9 @@ public class Evento {
     @ManyToMany
     @JoinTable(
             name = "evento_asistente",
-            joinColumns = @JoinColumn(name = "asistente_id"),
-            inverseJoinColumns = @JoinColumn(name = "evento_id"))
+            joinColumns = @JoinColumn(name = "id_evento"),
+            inverseJoinColumns = @JoinColumn(name = "id_asistente"))
     private List<Asistente> asistentes;
-
 
 
     public void actualizarEvento(String nuevoNombre, String nuevaFecha, String nuevoLugar) {
