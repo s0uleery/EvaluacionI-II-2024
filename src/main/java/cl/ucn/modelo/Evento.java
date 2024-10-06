@@ -9,8 +9,7 @@ import java.util.List;
 public class Evento {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String nombre;
     private String fecha;
     private String lugar;
@@ -19,25 +18,14 @@ public class Evento {
     @JoinTable(
             name = "evento_asistente",
             joinColumns = @JoinColumn(name = "id_evento"),
-            inverseJoinColumns = @JoinColumn(name = "id_asistente"))
+            inverseJoinColumns = @JoinColumn(name = "rut"))
     private List<Asistente> asistentes;
 
-
-    public void actualizarEvento(String nuevoNombre, String nuevaFecha, String nuevoLugar) {
-        this.nombre = nuevoNombre;
-        this.fecha = nuevaFecha;
-        this.lugar = nuevoLugar;
-
-        for (Asistente asistente : asistentes) {
-            asistente.notificarCambio(this);
-        }
-    }
-
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -47,6 +35,12 @@ public class Evento {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+
+        if (this.asistentes != null) {
+            for (Asistente asistente : asistentes) {
+                asistente.notificarCambio(this);
+            }
+        }
     }
 
     public String getFecha() {
@@ -55,6 +49,12 @@ public class Evento {
 
     public void setFecha(String fecha) {
         this.fecha = fecha;
+
+        if (this.asistentes != null) {
+            for (Asistente asistente : asistentes) {
+                asistente.notificarCambio(this);
+            }
+        }
     }
 
     public String getLugar() {
@@ -63,6 +63,12 @@ public class Evento {
 
     public void setLugar(String lugar) {
         this.lugar = lugar;
+
+        if (this.asistentes != null) {
+            for (Asistente asistente : asistentes) {
+                asistente.notificarCambio(this);
+            }
+        }
     }
 
     public List<Asistente> getAsistentes() {

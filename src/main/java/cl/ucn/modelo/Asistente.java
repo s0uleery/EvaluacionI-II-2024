@@ -8,27 +8,50 @@ import java.util.List;
 public class Asistente {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+    @Column(name = "rut")
+    private Long rut;
     private String nombre;
     private String email;
 
-    @ManyToMany(mappedBy = "asistentes")
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "asistentes", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     List<Evento> eventos;
-
 
 
     public void notificarCambio(Evento evento) {
         System.out.println("Notificación: El evento " + evento.getNombre() +
-                " ha sido actualizado. Nueva fecha: " + evento.getFecha());
+                " ha sido actualizado. Nueva fecha: " + evento.getFecha() +
+                " Nuevo lugar: " + evento.getLugar() + " para el asistente " + this.nombre);
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setRut(Long rut) {
+        this.rut = rut;
     }
 
-    public Long getId() {
-        return id;
+    public Long getRut() {
+        return rut;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public List<Evento> getEventos() {
+        return eventos;
+    }
+
+    public void setEventos(List<Evento> eventos) {
+        this.eventos = eventos;
     }
 }
