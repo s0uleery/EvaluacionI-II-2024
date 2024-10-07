@@ -52,7 +52,7 @@ haga deben preservar la información de este archivo.
 ### Preguntas (Parte 1) (65%)
 
 1. ¿Cuales patrones de diseño son los adecuados para dar solución al problema de implementación?. Escriba una breve explicación (**10pts**).
-2. ¿Cuales son los principios de diseño que atienden los patrones escogidos?. Escriba una breve explicación. (**10pts**)
+2. ¿Cuales son las propiedades y principios de diseño que atienden los patrones escogidos?. Escriba una breve explicación. (**10pts**)
 
 ### Preguntas (Parte 2) (35%)
 
