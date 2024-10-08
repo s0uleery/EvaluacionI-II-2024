@@ -1,7 +1,7 @@
 # Primera Evaluación II-2024
 
 ### Asignatura: Patrones de Software y Programación <br> Profesor: Daniel San Martín
-Nombre Estudiante: 
+Nombre Estudiante: Valentina López
 
 <hr>
 
